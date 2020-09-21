@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+	crossorigin="anonymous">
+</head>
+<body>
+
+
+
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+
+				<h1>Login Page</h1>
+
+				<form th:action="@{/login}" method="post">
+
+
+					<div th:if="${param.error}">
+						<div class="alert alert-danger">Invalid userName and password
+						</div>
+					</div>
+
+
+					<div th:if="${param.logout}">
+						<div class="alert alert-info">you have bean logged out</div>
+					</div>
+
+					<div class="form-group">
+						<label for="username"> Usermame </label> <input id="userName"
+							name="username" class="form-control" required
+							autofocus="autofocus" placeholder="Enter your email" />
+					</div>
+
+
+					<div class="form-group">
+						<label for="password"> Password </label> <input id="password"
+							name="password" type="password" class="form-control" required
+							autofocus="autofocus" placeholder="Enter your password" />
+					</div>
+
+					<div class="form-group">
+						<button type="submit" class="btn btn-success">Register</button>
+						
+					</div>
+
+				</form>
+
+				<div class="form-group">
+					<span>New user? <a href="/" th:href="@{/registration}">Register
+							here</a>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+</body>
+</html>
